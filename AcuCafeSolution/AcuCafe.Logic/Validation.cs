@@ -1,10 +1,12 @@
-﻿namespace AcuCafe.Logic
+﻿using System;
+
+namespace AcuCafe.Logic
 {
     public static class Validation
     {
         public static bool IsInputValid(string userInput)
         {
-            return int.TryParse(userInput, out _);
+            return int.TryParse(userInput, out _) && Convert.ToInt32(userInput) > 0;
         }
 
         public static bool IsDrinkSelectedOnTheList(string drinkSelected)
