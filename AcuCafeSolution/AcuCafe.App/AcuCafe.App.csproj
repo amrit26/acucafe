@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcuCafe.Logic\AcuCafe.Logic.csproj">
+      <Project>{4CA626A4-3306-4C98-A439-D0A10ACFBA3B}</Project>
+      <Name>AcuCafe.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

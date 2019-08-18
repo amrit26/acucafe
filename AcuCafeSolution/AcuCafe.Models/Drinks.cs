@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AcuCafe.Tests
+namespace AcuCafe.Models
 {
-    public class Class1
+    class Drinks
     {
     }
 }
