@@ -1,50 +1,68 @@
 ﻿using AcuCafe.Logic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace AcuCafe.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ValidationTests
     {
-        [TestMethod]
-        public void IsUserInputValid_True()
+        [TestCase("1")]
+        [TestCase("4")]
+        [TestCase("7")]
+        [Test]
+        public void IsUserInputValid_True(string userInput)
         {
-            var validInput = Validation.IsInputValid("1");
+            var validInput = Validation.IsInputValid(userInput);
             Assert.IsTrue(validInput);
         }
 
-        [TestMethod]
-        public void IsUserInputValid_False()
+        [TestCase("number")]
+        [TestCase("-10")]
+        [TestCase("0")]
+        [Test]
+        public void IsUserInputValid_False(string userInput)
         {
-            var invalidInput = Validation.IsInputValid("number");
+            var invalidInput = Validation.IsInputValid(userInput);
             Assert.IsFalse(invalidInput);
         }
 
-        [TestMethod]
-        public void IsDrinkSelectedOnTheList_True()
+        [TestCase("1")]
+        [TestCase("4")]
+        [TestCase("7")]
+        [Test]
+        public void IsDrinkSelectedOnTheList_True(string userInput)
         {
-            var validInput = Validation.IsDrinkSelectedOnTheList("1");
+            var validInput = Validation.IsDrinkSelectedOnTheList(userInput);
             Assert.IsTrue(validInput);
         }
 
-        [TestMethod]
-        public void IsDrinkSelectedOnTheList_False()
+        [TestCase("number")]
+        [TestCase("-10")]
+        [TestCase("9")]
+        [Test]
+        public void IsDrinkSelectedOnTheList_False(string userInput)
         {
-            var invalidInput = Validation.IsDrinkSelectedOnTheList("9");
+            var invalidInput = Validation.IsDrinkSelectedOnTheList(userInput);
             Assert.IsFalse(invalidInput);
         }
 
-        [TestMethod]
-        public void IsToppingSelectedOnTheList_True()
+        [TestCase("1")]
+        [TestCase("3")]
+        [TestCase("5")]
+        [Test]
+        public void IsToppingSelectedOnTheList_True(string userInput)
         {
-            var validInput = Validation.IsToppingSelectedOnTheList("1");
+            var validInput = Validation.IsToppingSelectedOnTheList(userInput);
             Assert.IsTrue(validInput);
         }
 
-        [TestMethod]
-        public void IsToppingSelectedOnTheList_False()
+        [TestCase("number")]
+        [TestCase("-10")]
+        [TestCase("7")]
+        [Test]
+        public void IsToppingSelectedOnTheList_False(string userInput)
         {
-            var invalidInput = Validation.IsToppingSelectedOnTheList("9");
+            var invalidInput = Validation.IsToppingSelectedOnTheList(userInput);
             Assert.IsFalse(invalidInput);
         }
     }
